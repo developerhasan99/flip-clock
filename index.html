@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Clock!</title>
+</head>
+
+<body>
+    <style>
+        .flipdown {
+            --heading-font-color: #333;
+            --separator-color: #333;
+            --fliper-color: #333;
+            --font-color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="flipdown.js"></script>
+    <div id="k24-countdown" class="flipdown"></div>
+    <script>
+        const timeout = Date.now() / 1000 + 1000;
+        window.onload = function () {
+            new FlipDown(timeout, 'k24-countdown', {
+                headings: ["Nap", "Óra", "Perc", "Sekunden"],
+            }).start()
+        }
+    </script>
+
+</body>
+
+</html>
